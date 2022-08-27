@@ -354,7 +354,7 @@ text-center-sm {
 }
 
 .color-theme {
-	color: #3498db !important;
+	color: #BF0411 !important;
 }
 
 .color-white {
@@ -770,23 +770,23 @@ section {
 
 /* Borders */
 .border-all {
-	border: 1px solid #3498db;
+	border: 1px solid #BF0411;
 }
 
 .border-top {
-	border-top: 1px solid #3498db;
+	border-top: 1px solid #BF0411;
 }
 
 .border-bottom {
-	border-bottom: 1px solid #3498db;
+	border-bottom: 1px solid #BF0411;
 }
 
 .border-right {
-	border-right: 1px solid #3498db;
+	border-right: 1px solid #BF0411;
 }
 
 .border-left {
-	border-left: 1px solid #3498db;
+	border-left: 1px solid #BF0411;
 }
 
 /* Display */
@@ -1031,7 +1031,7 @@ section {
     #BACKGROUNDS
 \*------------------------------------*/
 .bg-theme {
-	background-color: #3498db !important;
+	background-color: #BF0411 !important;
 }
 
 .bg-gray {
@@ -1085,7 +1085,7 @@ section {
 }
 
 .bg-overlay-theme:before {
-	background-color: #3498db;
+	background-color: #BF0411;
 	opacity: 0.7;
 }
 
