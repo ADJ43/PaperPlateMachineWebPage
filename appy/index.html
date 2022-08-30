@@ -66,7 +66,7 @@
 							</li>
 							<li><a data-scroll="scrollTo" href="#screenshots">Imágenes</a>
 							</li>
-							<li><a data-scroll="scrollTo" href="#cta">Contacto</a>
+							<li><a data-scroll="scrollTo" href="#newsletter">Contacto</a>
 							</li>
 						</ul>
 					</div>
@@ -94,16 +94,17 @@
 							<div class="slide--headline">
 								<h1>Termoformadora de bandejas de cartón</h1>
 							</div>
-							<div class="slide--bio">Máquina semiautomática termoformadora de bandejas de cartón</div>
+							<div class="slide--bio">Máquina termoformadora de bandejas de cartón</div>
 							<div class="slide--action">
 								<!-- Contact Form Beginning -->
 								<form class="mb-0 form-action">
-									<div class="input-group">
+									<!-- <div class="input-group">
 										<input type="email" class="form-control" placeholder="E-mail address">
 										<span class="input-group-btn">
-											<input type="submit" class="btn btn--primary" value="Descargar Folleto" name="submit">
+
 										 </span>
-									</div>
+									</div> -->
+									<input type="submit" class="btn btn--primary" value="Descargar Folleto" name="submit">
 									<!-- .input-group end -->
 								</form>
 								<!-- Contact Form End -->
@@ -128,7 +129,7 @@
 				<div class="row clearfix">
 					<div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
 						<div class="heading heading-1 mb-80 text--center wow fadeInUp" data-wow-duration="1s">
-							<h2 class="heading--title">Máquina automática termoformadora de bandejas de cartón</h2>
+							<h2 class="heading--title">Características</h2>
 							<p class="heading--desc">Nuestra máquina formadora de bandejas es sencilla de operar, segura y silenciosa, consume muy poca energia y solo necesita electricidad monofásica para funcionar.</p>
 						</div>
 					</div>
@@ -241,7 +242,7 @@
 				<div class="row clearfix">
 					<div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
 						<div class="heading heading-1 mb-60 text--center wow fadeInUp" data-wow-duration="1s">
-							<h2 class="heading--title">¿Cómo Funciona?</h2>
+							<h2 class="heading--title">¿Cómo funciona?</h2>
 						<p class="heading--desc">Usted recibe nuestra máquina, la desempaca, la enchufa en su fábrica u hogar y ya puede empezar con la producción.</p>
 						</div>
 					</div>
@@ -410,31 +411,33 @@
 					<!-- .col-md-6 end -->
 				</div>
 				<!-- .row end -->
+				<form id="form">
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-6">
 						<div class="form-group">
-							<input type="text" class="form-control" id="name" placeholder="Nombre">
+							<input type="text" class="form-control" name="from_name" id="from_name" placeholder="Nombre">
 						</div>
 					</div>
 					<!-- .col-md-6 end -->
 					<div class="col-xs-12 col-sm-12 col-md-6">
 						<div class="form-group">
-							<input type="email" class="form-control" id="email" placeholder="Email">
+							<input type="text" class="form-control" name="reply_to" id="reply_to" placeholder="Email">
 						</div>
 					</div>
 					<!-- .col-md-6 end -->
 				</div>
 				<!-- .row end -->
 				<div class="form-group">
-					<textarea class="form-control" id="message" rows="3" placeholder="Mensaje"></textarea>
+					<textarea class="form-control" name="message" id="message" rows="3" placeholder="Mensaje"></textarea>
 				</div>
-				<button type="submit" class="btn btn--primary btn--bordered btn-block">Enviar</button>
+				<button type="submit" id="button" value="Enviar" class="btn center-block btn--primary btn--bordered btn-block">Enviar</button>
 				</div>
 				<!-- .col-md-12 end -->
 				</div>
 				</div>
 				<!-- .row end -->
 			</div>
+		</form>
 			<!-- .container end -->
 		</section>
 		<!-- #newsletter end -->
@@ -463,5 +466,36 @@
 	<script src="assets/js/jquery-2.2.4.min.js"></script>
 	<script src="assets/js/plugins.js"></script>
 	<script src="assets/js/functions.js"></script>
+
+	<script type="text/javascript" >
+	const btn = document.getElementById('button');
+
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   btn.innerHTML = 'Enviando...';
+
+   const serviceID = 'default_service';
+   const templateID = 'template_w2e9yv4';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.innerHTML = 'Enviado!!';
+	  btn.disabled = true;
+    //   alert('Sent!');
+    }, (err) => {
+      btn.innerHTML = 'Enviar';
+      alert(JSON.stringify(err));
+    });
+});
+</script>
+
+	<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script type="text/javascript">
+  emailjs.init('2mGHbszCLdi9tAGDz')
+</script>
 </body>
 </html>
