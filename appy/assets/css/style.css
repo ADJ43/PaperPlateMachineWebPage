@@ -2046,7 +2046,9 @@ section {
 	border-radius: 0;
 	margin-top: 35px;
 }
-
+.navbar-toggle .icon-bar {
+    background-color: #BF0411;
+}
 .container > .navbar-header {
 	margin-left: 0;
 	padding-right: 10px;
@@ -2745,16 +2747,16 @@ li a:hover,
 	#Video
 \*------------------------------------*/
 .video-ipad-holder {
-	width: 646px;
-	height: 456px;
+	height: 646px;
+	width: 456px;
 	margin: 0 auto;
 	background: url("../images/mockup/iPad.png") no-repeat center;
-	padding: 30px 59px;
+	padding: 70px 59px 30px 59px;
 }
 
 .video-ipad-holder iframe {
 	width: 100%;
-	height: 100%;
+	height: 90%;
 }
 
 /* Custom, iPhone Retina */
@@ -2762,8 +2764,21 @@ li a:hover,
 
 .video-ipad-holder {
 	width: 100%;
-	background-size: contain;
-	height: auto;
+	background:none;
+	height: 600px;
+}
+.slide--action{
+	text-align:center;
+}
+.slide--action .btn{
+	width:190px;
+
+}
+.bg-ytvideo{
+	display: none;
+}
+.bg-dark{
+	background-color: #000!important;
 }
 }
 
@@ -3384,4 +3399,10 @@ body.page-dark {
 
 .body-bordered .navbar-fixed-top.affix {
 	top: 0;
+}
+.mailto a{
+ color:white;
+}
+.mailto a:hover{
+	color:#BF0411;
 }
